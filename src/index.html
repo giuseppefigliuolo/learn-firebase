@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Welcome to Firebase Hosting</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>"
+    />
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/8.4.1/firebase-app.js"></script>
@@ -141,6 +145,12 @@
           loadEl.textContent =
             "Error loading the Firebase SDK, check the console.";
         }
+        const db = firebase.firestore();
+        const collection = db.collection("items");
+        collection
+          .doc("emulator")
+          .set({ label: "emulatore che non va", value: "emulator" });
+        console.log(collection);
       });
     </script>
   </body>
